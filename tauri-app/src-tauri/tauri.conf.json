@@ -1,0 +1,121 @@
+{
+  "package": {
+    "productName": "tauri-app",
+    "version": "0.1.0"
+  },
+  "build": {
+    "withGlobalTauri": false,
+    "distDir": "../dist",
+    "devPath": "http://localhost:1420",
+    "beforeBuildCommand": "bun run build",
+    "beforeDevCommand": "bun run dev:browser"
+  },
+  "tauri": {
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.tauri-app.app",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "resources": [],
+      "externalBin": [],
+      "copyright": "Stormx",
+      "category": "DeveloperTool",
+      "shortDescription": "",
+      "longDescription": "",
+      "deb": {
+        "depends": []
+      },
+      "macOS": {
+        "frameworks": [],
+        "minimumSystemVersion": "",
+        "exceptionDomain": "",
+        "signingIdentity": null,
+        "entitlements": null
+      },
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": "",
+        "webviewInstallMode": {
+          "type": "offlineInstaller"
+        }
+      }
+    },
+    "updater": {
+      "active": false,
+      "dialog": false,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEJCN0M0M0FGMUEyOTQ2MTQKUldRVVJpa2FyME44dTVWOXdKN1lrN3hPeHZhYXZJQitlNFZlSlR4Y1EyeFArUWJ4aCtMUkdlQTUK",
+      "endpoints": [
+        "https://gist.githubusercontent.com/adriancmiranda/d5d4d87ad7cac480c514a02a4b766784/raw"
+      ],
+      "windows": {
+        "installMode": "basicUi"
+      }
+    },
+    "allowlist": {
+      "all": false,
+      "path": {
+        "all": true
+      },
+      "window": {
+        "all": true,
+        "create": false
+      },
+      "dialog": {
+        "all": false,
+        "open": true,
+        "save": false,
+        "message": true
+      },
+      "fs": {
+        "all": true,
+        "scope": [
+          "**"
+        ]
+      },
+      "shell": {
+        "all": false,
+        "execute": true,
+        "open": true
+      },
+      "protocol": {
+        "asset": true,
+        "assetScope": [
+          "**",
+          "**/*.*"
+        ]
+      },
+      "clipboard": {
+        "all": true
+      },
+      "process": {
+        "all": true
+      },
+      "http": {
+        "all": true,
+        "request": true,
+        "scope": [
+          "https://localhost/*",
+          "https://storage.googleapis.com/*"
+        ]
+      }
+    },
+    "windows": [
+      {
+        "title": "tauri-app",
+        "width": 800,
+        "height": 600
+      }
+    ],
+    "security": {
+      "csp": "default-src * 'unsafe-inline' 'unsafe-eval' data: blob: filesystem: asset:;",
+      "dangerousDisableAssetCspModification": true
+    }
+  }
+}
